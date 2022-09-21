@@ -8,18 +8,19 @@ import { EditarCliente } from './pages/EditarCliente';
 import { VerCliente } from './pages/VerCliente';
 
 const App = () => {
-	return (
-		<Router>
-			<Routes>
-				<Route path='/clientes' element={<Layout />}>
-					<Route index element={<Inicio />} />
-					<Route path='nuevo' element={<NuevoCliente />} />
-					<Route path='editar/:id' element={<EditarCliente />} />
-					<Route path=':id' element={<VerCliente />} />
-				</Route>
-			</Routes>
-		</Router>
-	);
+  console.log(import.meta.env.VITE_API_URL);
+  return (
+    <Router>
+      <Routes>
+        <Route path='/clientes' element={<Layout />}>
+          <Route index element={<Inicio />} />
+          <Route path='nuevo' element={<NuevoCliente />} />
+          <Route path='editar/:id' element={<EditarCliente />} />
+          <Route path=':id' element={<VerCliente />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
